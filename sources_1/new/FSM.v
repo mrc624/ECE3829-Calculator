@@ -19,38 +19,16 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
-module Top_Module(
-    input clk,
-    input [7:0] sw,
-    input BTNR,
-    input BTNL,
-    output [6:0] seg_out,
-    output [3:0] an_out
-    );
-    
-    wire btnr;
-    Debounce(BTNR, clk, btnr);
-    wire btnl;
-    Debounce(BTNL, clk, btnl);
-    
-    wire [2:0] state;
-    FSM (btnr, btnl, state);
-    
-    Display_8Bit(state, clk, seg_out, an_out);
-    
-endmodule
-
-module FSM(
+module FSM
+# ( parameter WAIT = 2'b00,
+    parameter LOAD_FIRST = 2'b01,
+    parameter LOAD_SECOND = 2'b10,
+    parameter CALCULATE = 2'b11)
+    (
     input btnr,
     input btnl,
-    output reg [2:0] state
+    output reg [1:0] state
     );
-    
-    parameter WAIT = 2'b00;
-    parameter LOAD_FIRST = 2'b01;
-    parameter LOAD_SECOND = 2'b10;
-    parameter CALCULATE = 2'b11;
     
     always @ ( posedge (btnr | btnl) ) begin
         if (btnl == 1'b1) begin

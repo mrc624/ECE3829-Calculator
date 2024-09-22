@@ -21,3 +21,11 @@ set_property PACKAGE_PIN T17 [get_ports {BTNR}]
     set_property IOSTANDARD LVCMOS33 [get_ports {BTNR}]
 set_property PACKAGE_PIN W19 [get_ports {BTNL}]
     set_property IOSTANDARD LVCMOS33 [get_ports {BTNL}]
+    
+#LED
+set_property PACKAGE_PIN U16 [get_ports {LED[0]}]
+    set_property IOSTANDARD LVCMOS33 [get_ports {LED[0]}]
+set_property PACKAGE_PIN E19 [get_ports {LED[1]}]
+    set_property IOSTANDARD LVCMOS33 [get_ports {LED[1]}]
+set_property PACKAGE_PIN U19 [get_ports {LED[2]}]
+    set_property IOSTANDARD LVCMOS33 [get_ports {LED[2]}]
