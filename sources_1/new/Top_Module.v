@@ -98,6 +98,12 @@ module Top_Module(
     .ans(AND)
     );
     
+    OR(
+    .num1(num1),
+    .num2(num2),
+    .ans(OR)
+    );
+    
     
     //Handle display
     wire [7:0] disp0;

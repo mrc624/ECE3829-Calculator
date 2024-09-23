@@ -73,3 +73,13 @@ module AND (
         assign ans[i] = num1[i] * num2[i];
     end
 endmodule
+
+module OR (
+    input [7:0] num1,
+    input [7:0] num2,
+    output [7:0] ans
+    );
+    for (genvar i = 0; i <= 7; i = i + 1) begin
+        assign ans[i] = num1[i] | num2[i];
+    end
+endmodule
