@@ -38,17 +38,17 @@ module Calculate(
     parameter ADD_STATE = 3'b011;
     parameter SUB_STATE = 3'b100;
     
-    always @ (*) begin //this is essentially a mux
+    always @ (posedge btnr) begin //this is essentially a mux
         if (sw == XOR_STATE) begin
-            ans = XOR;
+            ans <= XOR;
         end else if (sw == AND_STATE) begin
-            ans = AND;
+            ans <= AND;
         end else if (sw == OR_STATE) begin
-            ans = OR;
+            ans <= OR;
         end else if (sw == ADD_STATE) begin
-            ans = SUM;
+            ans <= SUM;
         end else if (sw == SUB_STATE) begin
-            ans = DIF;
+            ans <= DIF;
         end
     end
     
@@ -96,6 +96,6 @@ module SUB(
     input [7:0] num1,
     input [7:0] num2,
     output [7:0] ans
-    );
+    );       
     assign ans = num1 - num2;
 endmodule
