@@ -83,3 +83,19 @@ module OR (
         assign ans[i] = num1[i] | num2[i];
     end
 endmodule
+
+module ADD(
+    input [7:0] num1,
+    input [7:0] num2,
+    output [9:0] ans
+    );
+    assign ans = num1 + num2;
+endmodule
+
+module SUB(
+    input [7:0] num1,
+    input [7:0] num2,
+    output [7:0] ans
+    );
+    assign ans = num1 - num2;
+endmodule

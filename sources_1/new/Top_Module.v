@@ -104,6 +104,18 @@ module Top_Module(
     .ans(OR)
     );
     
+    ADD(
+    .num1(num1),
+    .num2(num2),
+    .ans(SUM)
+    );
+    
+    SUB(
+    .num1(num1),
+    .num2(num2),
+    .ans(DIF)
+    );
+    
     
     //Handle display
     wire [7:0] disp0;
