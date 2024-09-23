@@ -67,9 +67,33 @@ module Top_Module(
               .num(num2),
               .btnr(btnr)
               );
+    //Calculate
+    wire [7:0] XOR;
+    wire [7:0] AND;
+    wire [7:0] OR;
+    wire [9:0] SUM;
+    wire [7:0] DIF;
+    wire [9:0] ans;
+    Calculate(
+    .btnr(btnr),
+    .sw(sw),
+    .state(state),
+    .XOR(XOR),
+    .AND(AND),
+    .OR(OR),
+    .SUM(SUM),
+    .DIF(DIF),
+    .ans(ans)
+    );
+    
+    XOR(
+    .num1(num1),
+    .num2(num2),
+    .ans(XOR)
+    );
+    
     
     //Handle display
-    reg [9:0] ans;
     wire [7:0] disp0;
     wire [7:0] disp1;
     wire [7:0] disp2;

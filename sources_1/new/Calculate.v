@@ -29,8 +29,20 @@ module Calculate(
     input [7:0] OR,
     input [9:0] SUM,
     input [7:0] DIF,
-    output [9:0] ans
+    output reg [9:0] ans
     );
+    
+    parameter XOR_STATE = 3'b000;
+    parameter AND_STATE = 3'b001;
+    parameter OR_STATE = 3'b010;
+    parameter ADD_STATE = 3'b011;
+    parameter SUB_STATE = 3'b100;
+    
+    always @ (*) begin
+        if (sw == XOR_STATE) begin
+            ans = XOR;
+        end
+    end
     
 endmodule
 

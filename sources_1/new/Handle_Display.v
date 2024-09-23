@@ -50,10 +50,10 @@ module Handle_Display
         disp0 = num2[3:0];
         disp1 = num2[7:4];
       end else if (state == CALCULATE) begin
-        disp0 = num1[3:0];
-        disp1 = num1[7:4];
-        disp2 = num2[3:0];
-        disp3 = num2[7:4];
+        disp0 = ans[3:0];
+        disp1 = ans[7:4];
+        disp2 = ans[9:8];
+        disp3 = OFF;
       end
     end
 endmodule
