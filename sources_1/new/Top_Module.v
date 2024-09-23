@@ -92,6 +92,12 @@ module Top_Module(
     .ans(XOR)
     );
     
+    AND(
+    .num1(num1),
+    .num2(num2),
+    .ans(AND)
+    );
+    
     
     //Handle display
     wire [7:0] disp0;
