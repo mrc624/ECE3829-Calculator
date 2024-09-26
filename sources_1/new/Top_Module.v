@@ -57,15 +57,13 @@ module Top_Module(
     Save_Num # (.TRIGGER_STATE(LOAD_FIRST))
     Save_Num1(.sw(sw),
               .state(state),
-              .num(num1),
-              .btnr(btnr)
+              .num(num1)
               );
     wire [7:0] num2;
     Save_Num # (.TRIGGER_STATE(LOAD_SECOND))
     Save_Num2(.sw(sw),
               .state(state),
-              .num(num2),
-              .btnr(btnr)
+              .num(num2)
               );
     //Calculate
     wire [7:0] XOR;

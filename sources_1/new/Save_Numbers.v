@@ -24,12 +24,9 @@ module Save_Num
     (
     input [7:0] sw,
     input [1:0] state,
-    input btnr,
     output reg [7:0] num
     );
-    always @ (posedge btnr) begin
-        if (state == TRIGGER_STATE - 1) begin
-            num <= sw;
-        end
+    always @ (posedge (state == TRIGGER_STATE)) begin
+        num <= sw;
     end
 endmodule
