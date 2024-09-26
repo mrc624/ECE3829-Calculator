@@ -74,7 +74,7 @@ module Top_Module(
     wire [9:0] SUM;
     wire [7:0] DIF;
     wire [9:0] ans;
-    Calculate(
+    Calculate calc_mod(
     .btnr(btnr),
     .sw(sw),
     .state(state),
@@ -86,31 +86,31 @@ module Top_Module(
     .ans(ans)
     );
     
-    XOR(
+    XOR xor_mod(
     .num1(num1),
     .num2(num2),
     .ans(XOR)
     );
     
-    AND(
+    AND and_mod(
     .num1(num1),
     .num2(num2),
     .ans(AND)
     );
     
-    OR(
+    OR or_mod(
     .num1(num1),
     .num2(num2),
     .ans(OR)
     );
     
-    ADD(
+    ADD add_mod(
     .num1(num1),
     .num2(num2),
     .ans(SUM)
     );
     
-    SUB(
+    SUB sub_mod(
     .num1(num1),
     .num2(num2),
     .ans(DIF)
